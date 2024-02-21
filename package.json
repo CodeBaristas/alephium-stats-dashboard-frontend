@@ -1,0 +1,46 @@
+{
+  "name": "mantine-minimal-next-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@alephium/web3": "^0.29.1",
+    "@alephium/web3-react": "^0.29.1",
+    "@mantine/carousel": "^7.5.0",
+    "@mantine/charts": "^7.5.0",
+    "@mantine/code-highlight": "^7.5.0",
+    "@mantine/core": "^7.5.0",
+    "@mantine/dates": "^7.5.0",
+    "@mantine/dropzone": "^7.5.0",
+    "@mantine/form": "^7.5.0",
+    "@mantine/hooks": "^7.5.0",
+    "@mantine/modals": "^7.5.0",
+    "@mantine/notifications": "^7.5.0",
+    "@mantine/nprogress": "^7.5.0",
+    "@mantine/spotlight": "^7.5.0",
+    "@mantine/tiptap": "^7.5.0",
+    "@tabler/icons-react": "^2.47.0",
+    "axios": "^1.6.7",
+    "next": "14.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-toastify": "^10.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.35",
+    "@types/react-dom": "18.2.14",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "1.13.0",
+    "postcss-simple-vars": "^7.0.1",
+    "typescript": "5.2.2"
+  },
+  "packageManager": "yarn@4.0.1"
+}
