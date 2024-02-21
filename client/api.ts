@@ -163,10 +163,10 @@ export interface StatsBalanceGroupOut {
 export interface StatsBlockFlowChainInfoOut {
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof StatsBlockFlowChainInfoOut
      */
-    'current_height': string;
+    'current_height': number;
 }
 /**
  * 
@@ -198,7 +198,7 @@ export interface StatsCurrentDifficultyOut {
      * @type {string}
      * @memberof StatsCurrentDifficultyOut
      */
-    'current_difficulty': string;
+    'difficulty': string;
 }
 /**
  * 
@@ -211,7 +211,7 @@ export interface StatsCurrentHashrateOut {
      * @type {string}
      * @memberof StatsCurrentHashrateOut
      */
-    'current_hash': string;
+    'hashrate': string;
 }
 /**
  * 
@@ -224,7 +224,7 @@ export interface StatsHistoryHashrateOut {
      * @type {string}
      * @memberof StatsHistoryHashrateOut
      */
-    'history_hash': string;
+    'hashrate': string;
 }
 /**
  * 
@@ -891,7 +891,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAverageBlockTimesStatsAverageBlocktimesGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<StatsAverageBlockTimes>> {
+        async getAverageBlockTimesStatsAverageBlocktimesGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<StatsAverageBlockTimes>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAverageBlockTimesStatsAverageBlocktimesGet(options);
             const index = configuration?.serverIndex ?? 0;
             const operationBasePath = operationServerMap['DefaultApi.getAverageBlockTimesStatsAverageBlocktimesGet']?.[index]?.url;
@@ -1052,7 +1052,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAverageBlockTimesStatsAverageBlocktimesGet(options?: any): AxiosPromise<StatsAverageBlockTimes> {
+        getAverageBlockTimesStatsAverageBlocktimesGet(options?: any): AxiosPromise<Array<StatsAverageBlockTimes>> {
             return localVarFp.getAverageBlockTimesStatsAverageBlocktimesGet(options).then((request) => request(axios, basePath));
         },
         /**

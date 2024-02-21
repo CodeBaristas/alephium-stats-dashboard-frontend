@@ -26,6 +26,10 @@ import {
 } from "../client";
 
 type Repo = {
+    alphSupplyTotal:StatsAlphSupply,
+    alphSupplyCirculating:StatsAlphSupply,
+    alphSupplyReserved:StatsAlphSupply,
+    alphSupplyLocked:StatsAlphSupply,
     averageBlockTimes: StatsAverageBlockTimes[];
     chainHeightsInfoData: StatsInfoHeightsOut[];
     difficulty: StatsCurrentDifficultyOut;
@@ -105,25 +109,25 @@ export default function Page({ repo }: InferGetStaticPropsType<typeof getStaticP
         {
             title: 'Total',
             icon: IconPool,
-            value: Number(repo.alphSupplyTotal).toFixed(2),
+            value:repo.alphSupplyTotal.supply,
             diff: 0,
         },
         {
             title: 'Circulating',
             icon: Icon360,
-            value: Number(repo.alphSupplyCirculating).toFixed(2),
+            value: repo.alphSupplyCirculating.supply,
             diff: 0,
         },
         {
             title: 'Reserved',
             icon: IconBuildingBank,
-            value: Number(repo.alphSupplyReserved).toFixed(2),
+            value: repo.alphSupplyReserved.supply,
             diff: 0,
         },
         {
             title: 'Locked',
             icon: IconLock,
-            value: Number(repo.alphSupplyLocked).toFixed(2),
+            value: repo.alphSupplyLocked.supply,
             diff: 0,
         },
     ]
@@ -143,7 +147,7 @@ export default function Page({ repo }: InferGetStaticPropsType<typeof getStaticP
         {
             title: 'Total Tx',
             icon: IconTransactionBitcoin,
-            value: repo.totalTransactions.toString(),
+            value: repo.totalTransactions.amount,
             diff: 0,
         },
     ];
@@ -165,7 +169,6 @@ export default function Page({ repo }: InferGetStaticPropsType<typeof getStaticP
             <HeaderSimple />
 
             <Container>
-                {/*<SearchbarInputs />*/}
                 <StatsGrid gridTitle={'Hashrates & Transactions'} gridData={data} />
                 <StatsGrid gridTitle={'Alph Supply'} gridData={alphSupplyData}/>
                 <StatsGrid gridTitle={'Avg. Blocktimes & Chain Heights'} gridData={combinedData}/>
