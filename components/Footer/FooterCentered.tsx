@@ -8,7 +8,7 @@ const FooterCentered = () => {
     <div className={classes.footer}>
       <div className={classes.inner}>
         <Group gap="xs" justify="flex-center" wrap="nowrap">
-          <Link href="https://github.com/codebaristas/alphstats-frontend">
+          <Link href="https://github.com/codebaristas/alephium-stats-dashboard-frontend">
             <ActionIcon size="lg" variant="default" radius="xl">
               <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
             </ActionIcon>
