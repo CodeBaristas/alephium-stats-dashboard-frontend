@@ -25,6 +25,8 @@ import {
     StatsTotalTransactions, SupplyType,
 } from "../client";
 
+
+
 type Repo = {
     alphSupplyTotal:StatsAlphSupply,
     alphSupplyCirculating:StatsAlphSupply,
@@ -76,10 +78,13 @@ export const getStaticProps: GetStaticProps = (async () => {
         difficulty,
         chainHeightsInfoData,
         totalTransactions };
+
+
     return {
         props: {
             repo,
         },
+        revalidate: 10, // In seconds
     };
 }) satisfies GetStaticProps<{
     repo: Repo;
